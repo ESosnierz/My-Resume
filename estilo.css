@@ -1,0 +1,245 @@
+/* ------------------------     Esse é o bloco do menu      ------------------------ */
+* {
+    margin: 0;
+    padding: 0;
+   /*  width: 900px */
+}
+
+.container {
+    min-height: 5vh;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    scroll-behavior: smooth;
+    background: black;
+    font-family:'Helvetica Neue', sans-serif;
+}
+
+/*  - 03 traços do menu -   */
+h1 a {
+  font-size: 80px;
+  margin-left: 20px;
+  color: chartreuse;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/*  - Fundo do menu -   */
+.popover {
+   display: none;
+   box-shadow: 0px 6px 8px rgba(19, 19, 19, .7);
+}
+/*  - Posição do menu -   */
+.popover:target {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
+/*  - Posição dos NOMES do menu -   */
+.popover .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 0;
+  height: 0;
+  color: #fff;
+  background-color: #191919;
+  animation: 1s grow ease forwards;
+  text-align: center;
+}
+
+.nav_list  {
+  list-style-type: none;
+}
+
+.nav_list a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+}
+
+.nav_list_item {
+  height: 100%;
+  overflow: hidden;
+}
+
+/*  - Transparencia dos NOMES do menu -   */
+.nav_list li {
+  padding: 15px 0;
+  text-transform: uppercase;
+  transform: translateY(200px);
+  opacity: 0;
+  animation: 1s slideUp ease forwards .1s;
+  position: relative;
+}
+
+/*  - Linhas crescente dos NOMES do menu -   */
+.nav_list li::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 0px;
+  left: 0;
+  bottom: 10px;
+  background: chartreuse; 
+  transition: all .5s ease;
+}
+
+.nav_list li:hover:before {
+      width: 100%;
+}
+
+.popover p {
+  padding: 50px;
+  opacity: 0;
+  animation: 1s fadeIn ease forwards 1s;
+}
+
+/*  - Bloco X "Fechar" NOMES do menu -   */
+.popover .close::after {
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  display: flex;
+  z-index: 1;
+  font-size: 30px;
+  align-items: center;
+  justify-content: center;
+  background-color: chartreuse;
+  color: black;
+  content: "×";
+  cursor: pointer;
+  opacity: 0; 
+  animation: 1s fadeIn ease forwards .5s;
+}
+
+/*  - Texto do menu "Menu"   */
+.texto-menu-left{
+  font-size: 20px;
+  color: chartreuse;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+/*  - Texto do menu "Elson Sosnierz"-  
+.texto-menu-rigth{
+  font-size: 15px;
+  color: chartreuse;
+  margin-top: 60px;
+  margin-left: 800px;
+  font-family: "Lucida Console", Monaco, monospace;
+}*/ 
+
+@keyframes grow {
+  100% {
+    height: 50%;
+    width: 20%;
+ }
+}
+
+@keyframes fadeIn {
+100% {
+  opacity: 1;
+ }
+}
+
+@keyframes slideUp {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ------------------------     Esse é o bloco de toda a página      ------------------------ */
+
+/* #=id  ---  .=class*/ 
+body{
+  background: rgba(0, 0, 255, 0.352) url('Imagem/fundo.png');
+  position: center;
+  font: 16px Arial, Helvetica, sans-serif;
+}
+
+p {
+  font-size: 16px;
+  text-align: justify;
+}
+
+/* ------------------------     Esse é o bloco da página INDEX     ------------------------ */
+#container {
+  display: flex;
+  justify-content: center;
+}
+
+#texto-inicio{
+  width: 300px; /* Definimos a largura da página */   
+  margin-top: 150px; /* left: posição do texto em relação a pagina do topo*/
+  float: left; /* O atributo Float é utilizado para fazermos o nosso bloco(div)
+  literalmente flutue e se posicione onde queremos na página,
+  quando escolhemos left, dizemos que esse bloco irá se posicionar na
+  parte esquerda da página */
+  font-family:'Helvetica Neue', sans-serif;
+}
+
+#imagem-inicio{
+  width: 300px;
+  margin-left: 80px; /* left: posição do texto em relação a pagina da esquerda*/
+  margin-top: 60px;
+  float: left;
+}
+
+/* ------------------------     Esse é o bloco da página SOBRE     ------------------------ */
+
+#psobre {
+  margin-left: 20px;
+  margin-top: 20px;
+  width: 900px;
+}
+
+/* ------------------------     Esse é o bloco da página PROJETOS    ------------------------ */
+#pprojetos {
+  margin-left: 20px;
+  margin-top: 20px;
+  width: 900px;
+}
+
+.img-projeto{
+  margin-top: 40px;
+}
+
+/* ------------------------     Esse é o bloco da página HABILIDADES     ------------------------ */
+#pexperiencia {
+  margin-left: 20px;
+  margin-top: 20px;
+  width: 900px;
+}
+
+/* ------------------------     Esse é o bloco da página CONTATO      ------------------------ */
+#pcontato {  
+  margin-left: 20px;
+  margin-top: 20px;
+  width: 900px;
+}
+
+.img-aperto{
+  margin-top: 80px;
+}
+
+.txt-aperto {
+  width: 300px; 
+  margin-top: 110px; 
+  float: left; 
+  font-family:'Helvetica Neue', sans-serif;
+}
+
+.link-contato {  
+  margin-left: 100px;
+}
+
